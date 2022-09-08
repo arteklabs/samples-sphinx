@@ -9,7 +9,7 @@ Check out the :doc:`about` section for further information.
    :caption: Contents:
 
    contributing/documentation
-   contributing/rst
+   contributing/reST
 
 
 
