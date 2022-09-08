@@ -7,16 +7,30 @@ Core Concepts
 
 You'll find literature on these concepts at :doc:`../literature`
 
-* :ref:`section header <subsection>`
+* :ref:`paragraph <paragraph>`
+* :ref:`inline markup <inline_markup>`
+* :ref:`list <list>`
+* :ref:`definitions <definitions>`
+* :ref:`literal_paragraph <literal_paragraph>`
+* :ref:`section header <section>`
 * :ref:`directive <directive>`
 * :ref:`role <role>`
 * :ref:`reference  <role>`
 * :ref:`inline external link <inline_ext_link>`
-* :ref:`cross-references <cross_reference>`
+* :ref:`internal link <internallink>`
+* :ref:`cross-reference objects: python <cross_reference_objects_python>`
+* :ref:`cross-reference objects: javascript <cross_reference_objects_js>`
 * :ref:`root document <root>`
 * :ref:`code-block <code>`
 * :ref:`domain <domain>`
 * :ref:`include .rst file <include_rst_file>`
+* :ref:`doctest block <doctest_block>`
+* :ref:`hyperlink <hyperlink>`
+* :ref:`field <field>`
+* :ref:`explicit markup <explicit_markup>`
+* :ref:`note <note>`
+* :ref:`warning <warning>`
+* :ref:`image <image>`
 
 .. _include_rst_file:
 .. _inline_ext_link:
@@ -25,6 +39,196 @@ You'll find literature on these concepts at :doc:`../literature`
 
 this is the root document
 
+.. _paragraph:
+
+Paragraph
+---------
+
+The basic block in a reST document.
+
+.. _inline_markup:
+
+Inline Markup
+-------------
+
+*italics*, **bold** and ``code``
+
+.. code::
+
+    *italics*, **bold** and ``code``
+
+.. _list:
+
+List
+----
+
+* This is a bulleted list.
+* It has two items, the second
+  item uses two lines.
+
+1. This is a numbered list.
+2. It has two items too.
+
+#. This is a numbered list.
+#. It has two items too.
+
+.. code::
+
+    * This is a bulleted list.
+    * It has two items, the second
+      item uses two lines.
+    
+    1. This is a numbered list.
+    2. It has two items too.
+    
+    #. This is a numbered list.
+    #. It has two items too.
+
+* this is
+* a list
+
+  * with a nested list
+  * and some subitems
+
+* and here the parent list continues
+
+.. code::
+
+    * this is
+    * a list
+    
+      * with a nested list
+      * and some subitems
+    
+    * and here the parent list continues
+
+.. _definitions:
+
+Definition
+----------
+
+definition (up to a line of text)
+   Multiline definition of the definition (indented)
+
+   multiline definition of the definition
+
+definition
+   definition of the definition
+
+.. code::
+
+    definition (up to a line of text)
+       Multiline definition of the definition (indented)
+    
+       multiline definition of the definition
+    
+    definition
+       definition of the definition
+
+| These lines are
+| broken exactly like in
+| the source file.
+
+.. code::
+
+    | These lines are
+    | broken exactly like in
+    | the source file.
+
+.. _literal_paragraph:
+
+Literal Paragraph
+-----------------
+
+standard paragraph::
+
+   multiline literal paragraph
+
+   multiline literal paragraph
+
+standard paragraph
+
+.. _doctest_block:
+
+Doctest Block
+-------------
+
+Doctest blocks are interactive Python sessions cut-and-pasted into docstrings. They do not require the literal blocks syntax. The doctest block must end with a blank line and should not end with an unused prompt.
+
+>>> 1 + 1
+2
+
+.. code:: python
+
+    >>> 1 + 1
+    2
+
+.. _table:
+
+Table
+-----
+
++------------------------+------------+----------+----------+
+| Header row, column 1   | Header 2   | Header 3 | Header 4 |
+| (header rows optional) |            |          |          |
++========================+============+==========+==========+
+| body row 1, column 1   | column 2   | column 3 | column 4 |
++------------------------+------------+----------+----------+
+| body row 2             | ...        | ...      |          |
++------------------------+------------+----------+----------+
+
+.. code::
+
+    +------------------------+------------+----------+----------+
+    | Header row, column 1   | Header 2   | Header 3 | Header 4 |
+    | (header rows optional) |            |          |          |
+    +========================+============+==========+==========+
+    | body row 1, column 1   | column 2   | column 3 | column 4 |
+    +------------------------+------------+----------+----------+
+    | body row 2             | ...        | ...      |          |
+    +------------------------+------------+----------+----------+
+
+=====  =====  =======
+A      B      A and B
+=====  =====  =======
+False  False  False
+True   False  False
+False  True   False
+True   True   True
+=====  =====  =======
+
+.. code::
+
+    =====  =====  =======
+    A      B      A and B
+    =====  =====  =======
+    False  False  False
+    True   False  False
+    False  True   False
+    True   True   True
+    =====  =====  =======
+
+.. _hyperlink:
+
+Hyperlink
+---------
+
+web link: `Link text <https://domain.invalid/>`_
+
+.. code::
+
+    `Link text <https://domain.invalid/>`_
+
+This is a paragraph that contains `a link`_.
+
+.. _a link: https://domain.invalid/
+
+.. code::
+
+    This is a paragraph that contains `a link`_.
+
+    .. _a link: https://domain.invalid/
+
 .. _domain:
 
 Domain
@@ -32,12 +236,22 @@ Domain
 
 `read the docs <https://www.sphinx-doc.org/en/master/glossary.html#term-domain>`_
 
-.. _subsection:
+.. _section:
 
-Subsection header
---------------
+Section
+-------
 
-This is a subsection header.
+.. code::
+
+    Section
+    -------
+
+* ``#`` with overline, for parts
+* ``*`` with overline, for chapters
+* ``=`` for sections
+* ``-`` for subsections
+* ``^`` for subsubsections
+* ``"`` for paragraphs
 
 .. _code:
 
@@ -54,34 +268,31 @@ Code block
         "this": "is a code block"
     }
 
-.. _cross_reference:
+.. _internallink:
 
-Cross-Reference
----------
+Internal Link
+-------------
 
-.. _role:
+See **cross-references**.
 
-Role
-----
+.. _cross_reference_objects_python:
 
-Roles:
+Cross-Reference Objects: Python
+-------------------------------
 
-* doc
-* ref
-* py:func
+.. code::
 
-Pointing to a document in the same dir: :doc:`documentation <documentation>`.
+    :py:mod:
+    :py:func:
+    :py:data:
+    :py:const:
+    :py:class:
+    :py:meth:
+    :py:attr:
+    :py:exc:
+    :py:obj:
 
-.. _directive:
-
-Directive
----------
-
-Directives:
-
-* py:function
-* autofunction
-* autoexception
+Examples
 
 :py:func:`mod.f` is the documentation for the python function ``mod.f()``:
 
@@ -106,6 +317,172 @@ Notice this can be replaced by fetching the documentation from the function itse
 .. autofunction:: mod.f
 
 .. autoexception:: mod.InvalidArgError
+
+.. _cross_reference_objects_js:
+
+Cross-Reference Objects: Javascript
+-----------------------------------
+
+.. code::
+
+    :js:mod:
+    :js:func:
+    :js:meth:
+    :js:class:
+    :js:data:
+    :js:attr:
+
+.. _field:
+
+Field
+-----
+
+:fieldname: Field content
+
+.. code::
+
+    :fieldname: Field content
+
+tocdepth
+    The maximum depth for a table of contents of this file.
+
+.. code::
+
+    :tocdepth: 2
+
+nocomments
+    If set, the web application won’t display a comment form for a page generated from this source file.
+
+.. code::
+
+    :nocomments:
+
+orphan
+    If set, warnings about this file not being included in any toctree will be suppressed.
+
+.. code::
+
+    :orphan:
+
+nosearch
+    If set, full text search for this file is disabled.
+
+.. code::
+
+    :nosearch:
+
+.. _role:
+
+Role
+----
+
+Inline piece of explicit markup. See :ref:`Inline Markup <inline_markup>`.
+
+.. _explicit_markup:
+
+Explicit Markup
+---------------
+
+An explicit markup block begins with a line starting with ``..``.
+
+.. _directive:
+
+Directive
+---------
+
+A directive is a generic block of explicit markup. See :ref:`Explicit Markup <explicit_markup>`.
+
+.. _note:
+
+Note
+----
+
+.. note::
+
+    this is a note
+
+.. code::
+
+    .. note::
+
+        this is a note
+
+.. _warning:
+
+Warning
+-------
+
+.. warning::
+
+    this is a warning
+
+.. code::
+
+    .. warning::
+
+        this is a warning
+
+.. _image:
+
+Image
+-----
+
+.. image:: https://www.sphinx-doc.org/en/master/_static/sphinxheader.png
+    :width: 400
+    :alt: Sphinx Logo
+
+.. code::
+
+    .. image:: https://www.sphinx-doc.org/en/master/_static/sphinxheader.png
+        :width: 400
+        :alt: Sphinx Logo
+
+.. _footnote:
+
+Footnote
+--------
+
+text [#fn1]_ text [#fn2]_ text [#]_ text [#]_ text
+
+.. rubric:: Footnotes
+
+.. [#fn1] footnote 1 content
+.. [#fn2] footnote 2 content
+.. [#] footnote 3 content
+.. [#] footnote 4 content
+
+.. code::
+
+    text [#fn1]_ text [#fn2]_ text [#]_ text [#]_ text
+
+    .. rubric:: Footnotes
+
+    .. [#fn1] footnote 1 content
+    .. [#fn2] footnote 2 content
+    .. [#] footnote 3 content
+    .. [#] footnote 4 content
+
+You can also explicitly number the footnotes ([1]_) or use auto-numbered footnotes without names ([#]_).
+
+.. _comments:
+
+Comments
+--------
+
+..
+    multiline comment
+    multiline comment
+
+    multiline comment
+
+.. code::
+
+    ..
+        multiline comment
+        multiline comment
+
+        multiline comment
+
 
 QA
 --
