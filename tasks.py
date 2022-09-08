@@ -44,6 +44,7 @@ def docs(ctx, step='build'):
             "make html",
             "cp -a _build/html/. debug/static/",
             "make clean",
+            "echo && echo Your static documentation pages can be found at \'docs/debug/static\' && echo",
         ]
     
     ctx.run(';'.join(cmds))
