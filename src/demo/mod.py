@@ -1,5 +1,7 @@
 class InvalidArgError(Exception):
-    """Raised if the argument is not [0]."""
+    """
+    Raised if the argument is not [0].
+    """
     pass
 
 
