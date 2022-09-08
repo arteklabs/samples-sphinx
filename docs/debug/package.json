@@ -1,0 +1,12 @@
+{
+    "name": "lifepsline-demo-sphinx",
+    "author": "lifespline",
+    "version": "1.0.0",
+    "scripts": {},
+    "dependencies": {
+        "express": "^4.18.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.19"
+    }
+}
