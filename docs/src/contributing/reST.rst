@@ -18,7 +18,7 @@ Given ``docs/sphinx/conf.py`` and ``docs/sphinx/index.rst``, add ``app/README.rs
 
     .. include:: ../../app/README.rst
 
-And editing ``docs/sphinx/index.rst`` such that:
+Edit ``docs/sphinx/index.rst`` such that:
 
 .. code-block:: rst
 
@@ -27,6 +27,15 @@ And editing ``docs/sphinx/index.rst`` such that:
         :caption: Contents:
 
         link
+
+Edit ``docs/sphinx/conf.py`` such that:
+
+.. code:: python 
+
+    import os
+    import sys
+    sys.path.insert(0, os.path.abspath('../..'))
+
 
 .. _inline_ext_link:
 
