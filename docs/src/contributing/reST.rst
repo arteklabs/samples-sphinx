@@ -7,32 +7,27 @@ Core Concepts
 
 You'll find literature on these concepts at :doc:`../literature`
 
-* :ref:`paragraph <paragraph>`
-* :ref:`inline markup <inline_markup>`
-* :ref:`list <list>`
-* :ref:`definitions <definitions>`
-* :ref:`literal_paragraph <literal_paragraph>`
-* :ref:`section header <section>`
-* :ref:`directive <directive>`
-* :ref:`role <role>`
-* :ref:`reference  <role>`
-* :ref:`inline external link <inline_ext_link>`
-* :ref:`internal link <internallink>`
-* :ref:`cross-reference objects: python <cross_reference_objects_python>`
-* :ref:`cross-reference objects: javascript <cross_reference_objects_js>`
-* :ref:`root document <root>`
-* :ref:`code-block <code>`
-* :ref:`domain <domain>`
-* :ref:`include .rst file <include_rst_file>`
-* :ref:`doctest block <doctest_block>`
-* :ref:`hyperlink <hyperlink>`
-* :ref:`field <field>`
-* :ref:`explicit markup <explicit_markup>`
-* :ref:`note <note>`
-* :ref:`warning <warning>`
-* :ref:`image <image>`
-
 .. _include_rst_file:
+
+Including a Rest File Outside The Root Dir
+------------------------------------------
+
+Given ``docs/sphinx/conf.py`` and ``docs/sphinx/index.rst``, add ``app/README.rst`` by creating ``docs/sphinx/link.rst`` such that:
+
+.. code-block:: rst
+
+    .. include:: ../../app/README.rst
+
+And editing ``docs/sphinx/index.rst`` such that:
+
+.. code-block:: rst
+
+    .. toctree::
+        :maxdepth: 1
+        :caption: Contents:
+
+        link
+
 .. _inline_ext_link:
 
 .. _root:
@@ -275,6 +270,23 @@ Internal Link
 
 See **cross-references**.
 
+.. _cross_references_docs:
+
+Cross-Reference: Documents
+--------------------------
+
+Pointer to the ``rst`` document :doc:`docs/src/contributing/documentation.rst <documentation>`
+
+.. code::
+
+    Pointer to the ``rst`` document :doc:`docs/src/contributing/documentation.rst <documentation>`
+
+Pointer to the non-``rst`` document :download:`docs/src/contributing/documentation.rst <documentation>`
+
+.. code::
+
+    Pointer to the non-``rst`` document :download:`docs/src/contributing/documentation.rst <documentation>`
+
 .. _cross_reference_objects_python:
 
 Cross-Reference Objects: Python
@@ -461,8 +473,6 @@ text [#fn1]_ text [#fn2]_ text [#]_ text [#]_ text
     .. [#fn2] footnote 2 content
     .. [#] footnote 3 content
     .. [#] footnote 4 content
-
-You can also explicitly number the footnotes ([1]_) or use auto-numbered footnotes without names ([#]_).
 
 .. _comments:
 
