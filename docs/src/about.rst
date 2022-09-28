@@ -1,5 +1,0 @@
-=====
-About
-=====
-
-about the project

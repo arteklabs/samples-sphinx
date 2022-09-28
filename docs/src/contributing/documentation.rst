@@ -1,5 +1,0 @@
-=============
-Documentation
-=============
-
-documentation on documentation
