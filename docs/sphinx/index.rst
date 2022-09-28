@@ -6,12 +6,14 @@
 Lifespline Samples: Sphinx's Docs
 =================================
 
-The sample shows how to configure sphinx to read docs both in ``.rst`` files and in pydocs formatted in ``reST`` standard.
+The repo contains a sphinx sample configuration for python projects only. It enables you to generate a static webpage containing both your ``.rst`` docs and your python docstrings formatted in the ``reST`` standard.
+
+``tasks.py``
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
 
-   src/getting_started
+   src/rest
    src/contributing
    src/literature
