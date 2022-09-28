@@ -5,46 +5,28 @@ import os
 
 @task
 def docs(ctx, step='build'):
-    """Generate documentation.
+    """Documentation ops.
+
+    :param ctx: _description_
+    :type ctx: _type_
+    :param step: ``build`` to build the docs, ``clean`` to remove the built 
+    docs, defaults to ``build``.
+    :type step: str, optional
     """
-
-    image_name = 'docs_debug_lifespline_demo_rst'
-    container_name = image_name
-    volume_root = os.getcwd()
-    volume_path = f'{volume_root}/docs/debug'
-    container_host = '0.0.0.0'
-    container_port = 8080
-
-    if step == 'debug-setup':
-        docker_build = f"docker build . -t {image_name}"
-        docker_run = f"""
-        docker run \
-            --rm -d \
-            --mount type=bind,source={volume_path},target=/usr/src/app \
-            -p {container_host}:{container_port}:{container_port} \
-            --name {container_name} \
-            {image_name} {container_port} {container_host}
-        """
-
+    if step == 'build':
         cmds = [
-            'cd docs/debug',
-            docker_build,
-            docker_run,
-
-        ]
-    elif step == 'debug-clear-setup':
-        cmds = [
-            f'docker stop {container_name}',
-            f'docker rm {container_name}',
-            f'docker rmi {image_name}',
-        ]
-    elif step == 'build':
-        cmds = [
-            "cd docs",
+            "cd docs/sphinx",
             "make html",
-            "cp -a _build/html/. debug/static/",
+            "cp -a _build/html/. ..",
             "make clean",
-            "echo && echo Your static documentation pages can be found at \'docs/debug/static\' && echo",
+            "echo && echo && echo && echo Your static documentation pages can be found at \'docs\' \(Ctrl+Click\) && echo",
         ]
-    
+    elif step == 'clean':
+        cmds = [
+            "cd docs/sphinx",
+            "make clean",
+            "cd ..",
+            "rm -rf src .buildinfo _sources _static .nojekyll genindex.html index.html objects.inv search.html searchindex.js py-modindex.html",
+        ]
+
     ctx.run(';'.join(cmds))
