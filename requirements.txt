@@ -1,4 +1,7 @@
 sphinx
-invoke
+
 # sphinx theme
 furo
+
+# task runner
+invoke
