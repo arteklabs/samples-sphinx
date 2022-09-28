@@ -7,3 +7,11 @@ Lifespline Samples: Sphinx's Docs
 =================================
 
 The repo contains a sphinx sample configuration for python projects only. It enables you to generate a static webpage containing both your ``.rst`` docs and your python docstrings formatted in the ``reST`` standard.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   src/rest
+   src/contributing
+   src/literature
