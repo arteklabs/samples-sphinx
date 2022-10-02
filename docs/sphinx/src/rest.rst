@@ -47,9 +47,10 @@ Edit ``docs/sphinx/conf.py`` such that:
 
 .. _inline_ext_link:
 
-.. _root:
+Root
+----
 
-this is the root document
+This is the root document.
 
 .. _paragraph:
 
@@ -282,10 +283,34 @@ Code block
 
 .. _internallink:
 
-Internal Link
--------------
+Cross Reference
+---------------
 
-See **cross-references**.
+Types of cross references:
+
+* :ref:`Internal <cross_references_internal>`
+* :ref:`Documents <cross_references_docs>`
+* :ref:`Objects: Python <cross_reference_objects_python>`
+* :ref:`Objects: JS <cross_reference_objects_js>`
+
+.. _cross_references_internal:
+
+Cross-Reference: Internal
+-------------------------
+
+Referencing the `next paragraph <next_paragraph>`.
+
+.. _next_paragraph:
+
+The next paragraph.
+
+.. code::
+
+    Referencing the `next paragraph <next_paragraph>`.
+
+    .. _next_paragraph:
+
+    The next paragraph.
 
 .. _cross_references_docs:
 
