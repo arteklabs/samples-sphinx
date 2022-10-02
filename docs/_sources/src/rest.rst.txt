@@ -475,6 +475,8 @@ Warning
 Image
 -----
 
+Adding an image from an ``url``:
+
 .. image:: https://www.sphinx-doc.org/en/master/_static/sphinxheader.png
     :width: 400
     :alt: Sphinx Logo
@@ -482,6 +484,18 @@ Image
 .. code::
 
     .. image:: https://www.sphinx-doc.org/en/master/_static/sphinxheader.png
+        :width: 400
+        :alt: Sphinx Logo
+
+Adding an image from the ``project repo``:
+
+.. image:: ../static/img/sphinxheader.webp
+    :width: 400
+    :alt: Sphinx Logo
+
+.. code::
+
+    .. image:: ../static/img/sphinxheader.webp
         :width: 400
         :alt: Sphinx Logo
 
