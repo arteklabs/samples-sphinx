@@ -298,7 +298,7 @@ Types of cross references:
 Cross-Reference: Internal
 -------------------------
 
-Referencing the `next paragraph <next_paragraph>`.
+Referencing the :ref:`next paragraph <next_paragraph>`.
 
 .. _next_paragraph:
 
