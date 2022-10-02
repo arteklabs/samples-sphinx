@@ -229,7 +229,10 @@
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../..&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p id="root"><span id="inline-ext-link"></span>this is the root document</p>
+</section>
+<section id="root">
+<span id="inline-ext-link"></span><h2>Root<a class="headerlink" href="#root" title="Permalink to this heading">#</a></h2>
+<p>This is the root document.</p>
 </section>
 <section id="paragraph">
 <span id="id1"></span><h2>Paragraph<a class="headerlink" href="#paragraph" title="Permalink to this heading">#</a></h2>
@@ -455,9 +458,27 @@ item uses two lines.</p></li>
 </pre></div>
 </div>
 </section>
-<section id="internal-link">
-<span id="internallink"></span><h2>Internal Link<a class="headerlink" href="#internal-link" title="Permalink to this heading">#</a></h2>
-<p>See <strong>cross-references</strong>.</p>
+<section id="cross-reference">
+<span id="internallink"></span><h2>Cross Reference<a class="headerlink" href="#cross-reference" title="Permalink to this heading">#</a></h2>
+<p>Types of cross references:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#cross-references-internal"><span class="std std-ref">Internal</span></a></p></li>
+<li><p><a class="reference internal" href="#cross-references-docs"><span class="std std-ref">Documents</span></a></p></li>
+<li><p><a class="reference internal" href="#cross-reference-objects-python"><span class="std std-ref">Objects: Python</span></a></p></li>
+<li><p><a class="reference internal" href="#cross-reference-objects-js"><span class="std std-ref">Objects: JS</span></a></p></li>
+</ul>
+</section>
+<section id="cross-reference-internal">
+<span id="cross-references-internal"></span><h2>Cross-Reference: Internal<a class="headerlink" href="#cross-reference-internal" title="Permalink to this heading">#</a></h2>
+<p>Referencing the <cite>next paragraph &lt;next_paragraph&gt;</cite>.</p>
+<p id="next-paragraph">The next paragraph.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Referencing the `next paragraph &lt;next_paragraph&gt;`.
+
+.. _next_paragraph:
+
+The next paragraph.
+</pre></div>
+</div>
 </section>
 <section id="cross-reference-documents">
 <span id="cross-references-docs"></span><h2>Cross-Reference: Documents<a class="headerlink" href="#cross-reference-documents" title="Permalink to this heading">#</a></h2>
@@ -717,6 +738,7 @@ item uses two lines.</p></li>
 <li><a class="reference internal" href="#">RST Syntax</a><ul>
 <li><a class="reference internal" href="#core-concepts">Core Concepts</a></li>
 <li><a class="reference internal" href="#including-a-rest-file-outside-the-root-dir">Including a Rest File Outside The Root Dir</a></li>
+<li><a class="reference internal" href="#root">Root</a></li>
 <li><a class="reference internal" href="#paragraph">Paragraph</a></li>
 <li><a class="reference internal" href="#inline-markup">Inline Markup</a></li>
 <li><a class="reference internal" href="#list">List</a></li>
@@ -728,7 +750,8 @@ item uses two lines.</p></li>
 <li><a class="reference internal" href="#domain">Domain</a></li>
 <li><a class="reference internal" href="#section">Section</a></li>
 <li><a class="reference internal" href="#code-block">Code block</a></li>
-<li><a class="reference internal" href="#internal-link">Internal Link</a></li>
+<li><a class="reference internal" href="#cross-reference">Cross Reference</a></li>
+<li><a class="reference internal" href="#cross-reference-internal">Cross-Reference: Internal</a></li>
 <li><a class="reference internal" href="#cross-reference-documents">Cross-Reference: Documents</a></li>
 <li><a class="reference internal" href="#cross-reference-objects-python">Cross-Reference Objects: Python</a></li>
 <li><a class="reference internal" href="#cross-reference-objects-javascript">Cross-Reference Objects: Javascript</a></li>
