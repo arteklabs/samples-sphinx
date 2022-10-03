@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -196,7 +196,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -204,7 +204,23 @@
         <article role="main">
           <a href="https://github.com/lifespline/samples-sphinx.git"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork Me On Github" data-recalc-dims="1"></a><section id="development">
 <h1>Development<a class="headerlink" href="#development" title="Permalink to this heading">#</a></h1>
-<p>How to develop your contribution to the sample <em>TODO</em></p>
+<section id="docs-structure">
+<h2>Docs Structure<a class="headerlink" href="#docs-structure" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── docs
+│   ├── sphinx
+│   ├── .nojekyll
+│   ├── _templates
+│   ├── conf.py
+│   ├── index.rst
+│   ├── make.bat
+│   └── Makefile
+</pre></div>
+</div>
+</section>
+<section id="images">
+<h2>Images<a class="headerlink" href="#images" title="Permalink to this heading">#</a></h2>
+<p>Images are contained in <code class="docutils literal notranslate"><span class="pre">docs/sphinx/static/img/</span></code>.</p>
+</section>
 </section>
 
         </article>
@@ -252,8 +268,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Development</a><ul>
+<li><a class="reference internal" href="#docs-structure">Docs Structure</a></li>
+<li><a class="reference internal" href="#images">Images</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

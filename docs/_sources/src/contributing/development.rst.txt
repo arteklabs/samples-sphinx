@@ -6,4 +6,21 @@
 Development
 ===========
 
-How to develop your contribution to the sample *TODO*
+Docs Structure
+--------------
+
+.. code-block::
+
+   ├── docs
+   │   ├── sphinx
+   │   ├── .nojekyll
+   │   ├── _templates
+   │   ├── conf.py
+   │   ├── index.rst
+   │   ├── make.bat
+   │   └── Makefile
+
+Images
+------
+
+Images are contained in ``docs/sphinx/static/img/``.
