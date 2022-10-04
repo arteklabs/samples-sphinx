@@ -316,6 +316,13 @@ The next paragraph.
 
     The next paragraph.
 
+.. _import_pydocs:
+
+Importing Pydocs
+----------------
+
+It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the former.
+
 .. _cross_references_docs:
 
 Cross-Reference: Documents
@@ -338,7 +345,7 @@ Pointer to the non-``rst`` document :download:`sphinx conf <../conf.py>`
 Cross-Reference Objects: Python
 -------------------------------
 
-It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the former.
+It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the latter.
 
 .. code::
 
@@ -354,7 +361,7 @@ It is possible to migrate docstrings from python source files, or to include pyt
 
 Examples
 
-Below, the snippet for ``mod.f``'s docstring:
+Below, the snippet for ``mod.f``'s docstring (it adds the specification to the ``toc``):
 
 .. py:function:: mod.f(arg=[0])
 
@@ -384,7 +391,7 @@ You refer to the docstring with :py:func:`mod.f`.
 
    You refer to the docstring with :py:func:`mod.f`.
 
-Notice that the function raises an exception ``mod.InvalidArgError``. The exception's docstring can be specified in the snippet below:
+Notice that the function raises an exception ``mod.InvalidArgError``. The exception's docstring can be specified in the snippet below (it adds the specification to the ``toc``):
 
 .. py:exception:: mod.InvalidArgError
 

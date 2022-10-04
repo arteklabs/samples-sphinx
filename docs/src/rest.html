@@ -483,6 +483,10 @@ The next paragraph.
 </pre></div>
 </div>
 </section>
+<section id="importing-pydocs">
+<span id="import-pydocs"></span><h2>Importing Pydocs<a class="headerlink" href="#importing-pydocs" title="Permalink to this heading">#</a></h2>
+<p>It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You’ll find examples below on how to do the former.</p>
+</section>
 <section id="cross-reference-documents">
 <span id="cross-references-docs"></span><h2>Cross-Reference: Documents<a class="headerlink" href="#cross-reference-documents" title="Permalink to this heading">#</a></h2>
 <p>Pointer to the <code class="docutils literal notranslate"><span class="pre">rst</span></code> document <a class="reference internal" href="literature.html"><span class="doc">literature.rst</span></a></p>
@@ -496,7 +500,7 @@ The next paragraph.
 </section>
 <section id="cross-reference-objects-python">
 <span id="id10"></span><h2>Cross-Reference Objects: Python<a class="headerlink" href="#cross-reference-objects-python" title="Permalink to this heading">#</a></h2>
-<p>It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You’ll find examples below on how to do the former.</p>
+<p>It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You’ll find examples below on how to do the latter.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">py</span><span class="p">:</span><span class="n">mod</span><span class="p">:</span>
 <span class="p">:</span><span class="n">py</span><span class="p">:</span><span class="n">func</span><span class="p">:</span>
 <span class="p">:</span><span class="n">py</span><span class="p">:</span><span class="n">data</span><span class="p">:</span>
@@ -509,7 +513,7 @@ The next paragraph.
 </pre></div>
 </div>
 <p>Examples</p>
-<p>Below, the snippet for <code class="docutils literal notranslate"><span class="pre">mod.f</span></code>’s docstring:</p>
+<p>Below, the snippet for <code class="docutils literal notranslate"><span class="pre">mod.f</span></code>’s docstring (it adds the specification to the <code class="docutils literal notranslate"><span class="pre">toc</span></code>):</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="mod.f">
 <span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mod.f" title="Permalink to this definition">#</a></dt>
@@ -546,7 +550,7 @@ The next paragraph.
 You refer to the docstring with :py:func:`mod.f`.
 </pre></div>
 </div>
-<p>Notice that the function raises an exception <code class="docutils literal notranslate"><span class="pre">mod.InvalidArgError</span></code>. The exception’s docstring can be specified in the snippet below:</p>
+<p>Notice that the function raises an exception <code class="docutils literal notranslate"><span class="pre">mod.InvalidArgError</span></code>. The exception’s docstring can be specified in the snippet below (it adds the specification to the <code class="docutils literal notranslate"><span class="pre">toc</span></code>):</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="mod.InvalidArgError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">InvalidArgError</span></span><a class="headerlink" href="#mod.InvalidArgError" title="Permalink to this definition">#</a></dt>
@@ -790,6 +794,7 @@ You refer to the docstring with :py:exc:`mod.InvalidArgError`.
 <li><a class="reference internal" href="#code-block">Code block</a></li>
 <li><a class="reference internal" href="#cross-reference">Cross Reference</a></li>
 <li><a class="reference internal" href="#cross-reference-internal">Cross-Reference: Internal</a></li>
+<li><a class="reference internal" href="#importing-pydocs">Importing Pydocs</a></li>
 <li><a class="reference internal" href="#cross-reference-documents">Cross-Reference: Documents</a></li>
 <li><a class="reference internal" href="#cross-reference-objects-python">Cross-Reference Objects: Python</a><ul>
 <li><a class="reference internal" href="#mod.f"><code class="docutils literal notranslate"><span class="pre">mod.f()</span></code></a></li>
