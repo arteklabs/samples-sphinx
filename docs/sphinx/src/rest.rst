@@ -334,6 +334,11 @@ Start by specifying on the :download:`sphinx config <../conf.py>` where the pyth
 .. automodule:: mod
    :members:
 
+.. code-block:: text
+
+    .. automodule:: mod
+       :members:
+
 .. _cross_references_docs:
 
 Cross-Reference: Documents
