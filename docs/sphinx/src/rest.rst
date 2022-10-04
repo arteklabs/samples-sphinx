@@ -321,7 +321,7 @@ The next paragraph.
 Importing Pydocs
 ----------------
 
-It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the former.
+It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the former. Read through :ref:`cross-referencing python objects <cross_reference_objects_python>` to learn how to do the latter.
 
 Start by specifying on the :download:`sphinx config <../conf.py>` where the python paths are (in this case, we which to extract the pydocs from :download:`sphinx config <../../../tasks.py>`):
 
@@ -356,7 +356,7 @@ Pointer to the non-``rst`` document :download:`sphinx conf <../conf.py>`
 Cross-Reference Objects: Python
 -------------------------------
 
-It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the latter.
+It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the latter. Read through :ref:`import python docstrings <import_pydocs>` to learn how to do the former.
 
 .. code::
 
