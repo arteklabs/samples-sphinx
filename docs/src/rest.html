@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Contributing" href="contributing.html" /><link rel="prev" title="Lifespline Samples: Sphinx’s Docs" href="../index.html" />
 
-    <meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
+    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
         <title>RST Syntax - Lifespline Samples: Sphinx 1.0.0-beta documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -188,7 +188,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -493,6 +494,7 @@ The next paragraph.
 </section>
 <section id="cross-reference-objects-python">
 <span id="id10"></span><h2>Cross-Reference Objects: Python<a class="headerlink" href="#cross-reference-objects-python" title="Permalink to this heading">#</a></h2>
+<p>It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You’ll find examples below on how to do the former.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">py</span><span class="p">:</span><span class="n">mod</span><span class="p">:</span>
 <span class="p">:</span><span class="n">py</span><span class="p">:</span><span class="n">func</span><span class="p">:</span>
 <span class="p">:</span><span class="n">py</span><span class="p">:</span><span class="n">data</span><span class="p">:</span>
@@ -505,7 +507,7 @@ The next paragraph.
 </pre></div>
 </div>
 <p>Examples</p>
-<p><a class="reference internal" href="#mod.f" title="mod.f"><code class="xref py py-func docutils literal notranslate"><span class="pre">mod.f()</span></code></a> is the documentation for the python function <code class="docutils literal notranslate"><span class="pre">mod.f()</span></code>:</p>
+<p>Below, the snippet for <code class="docutils literal notranslate"><span class="pre">mod.f</span></code>’s docstring:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="mod.f">
 <span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mod.f" title="Permalink to this definition">#</a></dt>
@@ -526,13 +528,39 @@ The next paragraph.
 </dl>
 </dd></dl>
 
-<p>notice that the function raises an exception <a class="reference internal" href="#mod.InvalidArgError" title="mod.InvalidArgError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">mod.InvalidArgError</span></code></a>:</p>
+<p>You refer to the docstring with <a class="reference internal" href="#mod.f" title="mod.f"><code class="xref py py-func docutils literal notranslate"><span class="pre">mod.f()</span></code></a>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Below, the snippet for ``mod.f``&#39;s docstring:
+
+.. py:function:: mod.f(arg=[0])
+
+   Returns 0 if ``arg == [&#39;0&#39;]``
+
+   :param arg: An argument of no use.
+   :type arg: list[int]
+   :raise mod.InvalidArgError: if arg is not [0].
+   :return: 0
+   :rtype: list[int]
+
+You refer to the docstring with :py:func:`mod.f`.
+</pre></div>
+</div>
+<p>Notice that the function raises an exception <code class="docutils literal notranslate"><span class="pre">mod.InvalidArgError</span></code>. The exception’s docstring can be specified in the snippet below:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="mod.InvalidArgError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">InvalidArgError</span></span><a class="headerlink" href="#mod.InvalidArgError" title="Permalink to this definition">#</a></dt>
 <dd><p>Raised if some condition is met.</p>
 </dd></dl>
 
+<p>You refer to the docstring with <a class="reference internal" href="#mod.InvalidArgError" title="mod.InvalidArgError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">mod.InvalidArgError</span></code></a>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Notice that the function raises an exception ``mod.InvalidArgError``. The exception&#39;s docstring can be specified in the snippet below:
+
+.. py:exception:: mod.InvalidArgError
+
+   Raised if some condition is met.
+
+You refer to the docstring with :py:exc:`mod.InvalidArgError`.
+</pre></div>
+</div>
 </section>
 <section id="cross-reference-objects-javascript">
 <span id="cross-reference-objects-js"></span><h2>Cross-Reference Objects: Javascript<a class="headerlink" href="#cross-reference-objects-javascript" title="Permalink to this heading">#</a></h2>
@@ -698,10 +726,10 @@ The next paragraph.
                 </div>
                 <div class="title">Contributing</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="../index.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -737,7 +765,7 @@ The next paragraph.
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -761,7 +789,11 @@ The next paragraph.
 <li><a class="reference internal" href="#cross-reference">Cross Reference</a></li>
 <li><a class="reference internal" href="#cross-reference-internal">Cross-Reference: Internal</a></li>
 <li><a class="reference internal" href="#cross-reference-documents">Cross-Reference: Documents</a></li>
-<li><a class="reference internal" href="#cross-reference-objects-python">Cross-Reference Objects: Python</a></li>
+<li><a class="reference internal" href="#cross-reference-objects-python">Cross-Reference Objects: Python</a><ul>
+<li><a class="reference internal" href="#mod.f"><code class="docutils literal notranslate"><span class="pre">mod.f()</span></code></a></li>
+<li><a class="reference internal" href="#mod.InvalidArgError"><code class="docutils literal notranslate"><span class="pre">mod.InvalidArgError</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#cross-reference-objects-javascript">Cross-Reference Objects: Javascript</a></li>
 <li><a class="reference internal" href="#field">Field</a></li>
 <li><a class="reference internal" href="#role">Role</a></li>
@@ -789,6 +821,7 @@ The next paragraph.
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     </body>
 </html>

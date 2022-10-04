@@ -38,7 +38,7 @@ Edit ``docs/sphinx/index.rst`` such that:
 
 Edit ``docs/sphinx/conf.py`` such that:
 
-.. code:: python 
+.. code:: python
 
     import os
     import sys
@@ -90,10 +90,10 @@ List
     * This is a bulleted list.
     * It has two items, the second
       item uses two lines.
-    
+
     1. This is a numbered list.
     2. It has two items too.
-    
+
     #. This is a numbered list.
     #. It has two items too.
 
@@ -109,10 +109,10 @@ List
 
     * this is
     * a list
-    
+
       * with a nested list
       * and some subitems
-    
+
     * and here the parent list continues
 
 .. _definitions:
@@ -132,9 +132,9 @@ definition
 
     definition (up to a line of text)
        Multiline definition of the definition (indented)
-    
+
        multiline definition of the definition
-    
+
     definition
        definition of the definition
 
@@ -334,6 +334,8 @@ Pointer to the non-``rst`` document :download:`sphinx conf <../conf.py>`
 Cross-Reference Objects: Python
 -------------------------------
 
+It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the former.
+
 .. code::
 
     :py:mod:
@@ -348,7 +350,7 @@ Cross-Reference Objects: Python
 
 Examples
 
-:py:func:`mod.f` is the documentation for the python function ``mod.f()``:
+Below, the snippet for ``mod.f``'s docstring:
 
 .. py:function:: mod.f(arg=[0])
 
@@ -360,11 +362,41 @@ Examples
    :return: 0
    :rtype: list[int]
 
-notice that the function raises an exception :py:exc:`mod.InvalidArgError`:
+You refer to the docstring with :py:func:`mod.f`.
+
+.. code-block:: text
+
+   Below, the snippet for ``mod.f``'s docstring:
+
+   .. py:function:: mod.f(arg=[0])
+
+      Returns 0 if ``arg == ['0']``
+
+      :param arg: An argument of no use.
+      :type arg: list[int]
+      :raise mod.InvalidArgError: if arg is not [0].
+      :return: 0
+      :rtype: list[int]
+
+   You refer to the docstring with :py:func:`mod.f`.
+
+Notice that the function raises an exception ``mod.InvalidArgError``. The exception's docstring can be specified in the snippet below:
 
 .. py:exception:: mod.InvalidArgError
 
    Raised if some condition is met.
+
+You refer to the docstring with :py:exc:`mod.InvalidArgError`.
+
+.. code-block:: text
+
+   Notice that the function raises an exception ``mod.InvalidArgError``. The exception's docstring can be specified in the snippet below:
+
+   .. py:exception:: mod.InvalidArgError
+
+      Raised if some condition is met.
+
+   You refer to the docstring with :py:exc:`mod.InvalidArgError`.
 
 .. _cross_reference_objects_js:
 
