@@ -343,7 +343,7 @@ Here's the extracted docs:
     .. automodule:: mod
        :members:
 
-To extract docs from a specific file (say :download:`sphinx config <../../../tasks.py>`), add to the :download:`sphinx config <../conf.py>`:
+To extract docs from a specific file (say :download:`tasks.py <../../../tasks.py>`), add to the :download:`sphinx config <../conf.py>`:
 
 .. code-block:: python
 
