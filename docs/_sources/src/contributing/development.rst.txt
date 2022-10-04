@@ -24,3 +24,9 @@ Images
 ------
 
 Images are contained in ``docs/sphinx/static/img/``.
+
+Task Runner
+-----------
+
+.. automodule:: tasks
+   :members:
