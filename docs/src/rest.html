@@ -486,6 +486,38 @@ The next paragraph.
 <section id="importing-pydocs">
 <span id="import-pydocs"></span><h2>Importing Pydocs<a class="headerlink" href="#importing-pydocs" title="Permalink to this heading">#</a></h2>
 <p>It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You’ll find examples below on how to do the former.</p>
+<p>Start by specifying on the <a class="reference download internal" download="" href="../_downloads/fb0d0d7ff27f33697ba3b787ec894677/conf.py"><code class="xref download docutils literal notranslate"><span class="pre">sphinx</span> <span class="pre">config</span></code></a> where the python paths are (in this case, we which to extract the pydocs from <a class="reference download internal" download="" href="../_downloads/0b5d19d6fe38bf3e18335119ec595727/tasks.py"><code class="xref download docutils literal notranslate"><span class="pre">sphinx</span> <span class="pre">config</span></code></a>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../src/demo&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<span class="target" id="module-mod"></span><dl class="py exception">
+<dt class="sig sig-object py" id="mod.InvalidArgError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">InvalidArgError</span></span><a class="headerlink" href="#mod.InvalidArgError" title="Permalink to this definition">#</a></dt>
+<dd><p>Raised if the argument is not [0].</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mod.f">
+<span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mod.f" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns 0 if <code class="docutils literal notranslate"><span class="pre">arg</span> <span class="pre">==</span> <span class="pre">['0']</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arg</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – An argument of no use.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mod.mod.InvalidArgError" title="mod.mod.InvalidArgError"><strong>mod.InvalidArgError</strong></a> – if arg is not [0].</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="cross-reference-documents">
 <span id="cross-references-docs"></span><h2>Cross-Reference: Documents<a class="headerlink" href="#cross-reference-documents" title="Permalink to this heading">#</a></h2>
@@ -515,15 +547,15 @@ The next paragraph.
 <p>Examples</p>
 <p>Below, the snippet for <code class="docutils literal notranslate"><span class="pre">mod.f</span></code>’s docstring (it adds the specification to the <code class="docutils literal notranslate"><span class="pre">toc</span></code>):</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="mod.f">
-<span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mod.f" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="mod.mod.f">
+<span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mod.mod.f" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns 0 if <code class="docutils literal notranslate"><span class="pre">arg</span> <span class="pre">==</span> <span class="pre">['0']</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>arg</strong> (<em>list</em><em>[</em><em>int</em><em>]</em>) – An argument of no use.</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#mod.InvalidArgError" title="mod.InvalidArgError"><strong>mod.InvalidArgError</strong></a> – if arg is not [0].</p>
+<dd class="field-even"><p><a class="reference internal" href="#mod.mod.InvalidArgError" title="mod.mod.InvalidArgError"><strong>mod.InvalidArgError</strong></a> – if arg is not [0].</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>0</p>
@@ -552,8 +584,8 @@ You refer to the docstring with :py:func:`mod.f`.
 </div>
 <p>Notice that the function raises an exception <code class="docutils literal notranslate"><span class="pre">mod.InvalidArgError</span></code>. The exception’s docstring can be specified in the snippet below (it adds the specification to the <code class="docutils literal notranslate"><span class="pre">toc</span></code>):</p>
 <dl class="py exception">
-<dt class="sig sig-object py" id="mod.InvalidArgError">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">InvalidArgError</span></span><a class="headerlink" href="#mod.InvalidArgError" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="mod.mod.InvalidArgError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mod.</span></span><span class="sig-name descname"><span class="pre">InvalidArgError</span></span><a class="headerlink" href="#mod.mod.InvalidArgError" title="Permalink to this definition">#</a></dt>
 <dd><p>Raised if some condition is met.</p>
 </dd></dl>
 
@@ -794,11 +826,15 @@ You refer to the docstring with :py:exc:`mod.InvalidArgError`.
 <li><a class="reference internal" href="#code-block">Code block</a></li>
 <li><a class="reference internal" href="#cross-reference">Cross Reference</a></li>
 <li><a class="reference internal" href="#cross-reference-internal">Cross-Reference: Internal</a></li>
-<li><a class="reference internal" href="#importing-pydocs">Importing Pydocs</a></li>
+<li><a class="reference internal" href="#importing-pydocs">Importing Pydocs</a><ul>
+<li><a class="reference internal" href="#mod.InvalidArgError"><code class="docutils literal notranslate"><span class="pre">InvalidArgError</span></code></a></li>
+<li><a class="reference internal" href="#mod.f"><code class="docutils literal notranslate"><span class="pre">f()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#cross-reference-documents">Cross-Reference: Documents</a></li>
 <li><a class="reference internal" href="#cross-reference-objects-python">Cross-Reference Objects: Python</a><ul>
-<li><a class="reference internal" href="#mod.f"><code class="docutils literal notranslate"><span class="pre">mod.f()</span></code></a></li>
-<li><a class="reference internal" href="#mod.InvalidArgError"><code class="docutils literal notranslate"><span class="pre">mod.InvalidArgError</span></code></a></li>
+<li><a class="reference internal" href="#mod.mod.f"><code class="docutils literal notranslate"><span class="pre">mod.f()</span></code></a></li>
+<li><a class="reference internal" href="#mod.mod.InvalidArgError"><code class="docutils literal notranslate"><span class="pre">mod.InvalidArgError</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#cross-reference-objects-javascript">Cross-Reference Objects: Javascript</a></li>

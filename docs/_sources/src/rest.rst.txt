@@ -323,6 +323,17 @@ Importing Pydocs
 
 It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the former.
 
+Start by specifying on the :download:`sphinx config <../conf.py>` where the python paths are (in this case, we which to extract the pydocs from :download:`sphinx config <../../../tasks.py>`):
+
+.. code-block:: python
+
+    import os
+    import sys
+    sys.path.insert(0, os.path.abspath('../src/demo'))
+
+.. automodule:: mod
+   :members:
+
 .. _cross_references_docs:
 
 Cross-Reference: Documents
