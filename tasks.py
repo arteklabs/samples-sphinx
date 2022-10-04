@@ -1,5 +1,5 @@
 """
-`invoke <https://www.pyinvoke.org/>`_ is the project's task runner. The tasks are defined at :download:`tasks.py <../../../../tasks.py>`.
+`invoke <https://www.pyinvoke.org/>`_ is the project's task runner. The tasks are defined at ``tasks.py``.
 """
 from invoke import task
 import os
