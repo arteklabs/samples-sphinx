@@ -323,20 +323,46 @@ Importing Pydocs
 
 It is possible to migrate docstrings from python source files, or to include python documentation in reST files. You'll find examples below on how to do the former. Read through :ref:`cross-referencing python objects <cross_reference_objects_python>` to learn how to do the latter.
 
-Start by specifying on the :download:`sphinx config <../conf.py>` where the python paths are (in this case, we which to extract the pydocs from :download:`sphinx config <../../../tasks.py>`):
+Start by specifying on the :download:`sphinx config <../conf.py>` where the python paths are (in this case, we which to extract the pydocs from the python module at ``src/demo``):
 
 .. code-block:: python
 
     import os
     import sys
-    sys.path.insert(0, os.path.abspath('../src/demo'))
+    sys.path.insert(0, os.path.abspath('../../src/demo')) # module docs
+
+Here's the extracted docs:
 
 .. automodule:: mod
    :members:
 
 .. code-block:: text
 
+    Here's the extracted docs:
+
     .. automodule:: mod
+       :members:
+
+To extract docs from a specific file (say :download:`sphinx config <../../../tasks.py>`), add to the :download:`sphinx config <../conf.py>`:
+
+.. code-block:: python
+
+    import os
+    import sys
+    sys.path.insert(0, os.path.abspath('../..')) # task runner docs
+
+To extract the docs, since they're being extracted elsewhere, it is required to add ``:noindex:``. Here's the extracted docs:
+
+.. automodule:: tasks
+   :noindex:
+   :members:
+
+.. code-block:: text
+
+    Here's the extracted docs:
+
+    .. automodule:: tasks
+       :noindex:
        :members:
 
 .. _cross_references_docs:
