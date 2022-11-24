@@ -382,6 +382,10 @@ Pointer to the non-``rst`` document :download:`sphinx conf <../conf.py>`
 
     Pointer to the non-``rst`` document :download:`sphinx conf <../conf.py>`
 
+.. note::
+
+    A document ``docs/sphinx/src/.../doc/`` can reference another document in a parent/child directory by navigating **from** that document.
+
 .. _cross_reference_objects_python:
 
 Cross-Reference Objects: Python
