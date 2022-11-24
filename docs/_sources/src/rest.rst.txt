@@ -374,7 +374,7 @@ Pointer to the ``rst`` document :doc:`literature.rst <literature>`
 
 .. code::
 
-    Pointer to the ``rst`` document :doc:`docs/src/contributing/literature.rst <literature>`
+    Pointer to the ``rst`` document :doc:`literature.rst <literature>`
 
 Pointer to the non-``rst`` document :download:`sphinx conf <../conf.py>`
 
