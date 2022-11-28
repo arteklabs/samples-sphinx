@@ -15,6 +15,11 @@ Core Concepts
 
 You'll find literature on these concepts at :doc:`literature`
 
+Launching Sphinx server locally
+-------------------------------
+
+Run ``python -m http.server`` from ``docs/sphinx/_build/html``, it opens a server at ``localhost:8000``.
+
 .. _include_rst_file:
 
 Including a Rest File Outside The Root Dir
