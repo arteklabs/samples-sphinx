@@ -26,10 +26,13 @@ The tasks are defined at :download:`tasks.py <../../../../tasks.py>` and are lis
 
 .. autofunction:: docs(step='build', port=docker_host_sphinx_server_default_port, verbose=False)
 """
-from invoke import task
+import logging
 import os
 import sys
-import logging
+import tabulate
+import json
+
+from invoke import task
 
 logging.basicConfig(
     format="%(asctime)s %(levelname)s: (%(filename)s:%(lineno)d) %(message)s",
@@ -63,6 +66,77 @@ def read(*parts, here):
 
 
 @task
+def test(ctx, verbose=False, test=None,):
+    """Run unit tests.
+
+    Parameters
+    ----------
+    verbose : bool, optional
+        _description_, by default False
+    test : string, optional
+        The test name, by default None (run all tests).
+    """
+    cmds =[]
+    if test:
+        cmds = [
+            "pytest --cov=src -k {}".format(test)
+        ]
+    else:
+        cmds = [
+            "pytest --cov=src",
+            "coverage html --directory docs/sphinx/_static/html/coverage",
+            "coverage erase",
+        ]
+
+    if verbose:
+        res = ctx.run(" && ".join(cmds))
+    else:
+        res = ctx.run(" && ".join(cmds), hide="both")
+
+@task
+def quality(ctx, verbose=False):
+    """Run unit tests.
+
+    Parameters
+    ----------
+    verbose : bool, optional
+        _description_, by default False
+    """
+    cmds = [
+        "radon cc src",
+        "radon mi src",
+        "radon raw src",
+
+        "radon cc tests",
+        "radon mi tests",
+        "radon raw tests",
+
+        "radon cc docs",
+        "radon mi docs",
+        "radon raw docs",
+
+        "radon cc tasks.py",
+        "radon mi tasks.py",
+        "radon raw tasks.py",
+
+        "vulture src",
+        "vulture tests",
+        "vulture docs",
+        "vulture tasks.py",
+
+        "bandit src",
+        "bandit tests",
+        "bandit docs",
+        "bandit tasks.py",
+    ]
+
+    if verbose:
+        ctx.run(" && ".join(cmds))
+    else:
+        ctx.run(" && ".join(cmds), hide="both")
+
+
+@task
 def lint(ctx, verbose=False, commit=False):
     """Lint the |project|'s source code.
 
@@ -78,6 +152,11 @@ def lint(ctx, verbose=False, commit=False):
         "black docs",
         "black tests",
         "black tasks.py",
+
+        "isort src",
+        "isort docs",
+        "isort tests",
+        "isort tasks.py",
     ]
     if verbose:
         res = ctx.run(" && ".join(cmds))
@@ -93,6 +172,7 @@ def lint(ctx, verbose=False, commit=False):
             res = ctx.run(" && ".join(cmds))
         else:
             res = ctx.run(" && ".join(cmds), hide="both")
+
 
 @task
 def docs(ctx, step="build", port=docker_host_sphinx_server_default_port, verbose=False):
@@ -160,6 +240,11 @@ def docs(ctx, step="build", port=docker_host_sphinx_server_default_port, verbose
        host: http://0.0.0.0:8000
        stop: inv docs --stop
 
+    Clean
+    -----
+
+    Remove all the static pages.
+
     Stop Preview
     ------------
 
@@ -182,6 +267,8 @@ def docs(ctx, step="build", port=docker_host_sphinx_server_default_port, verbose
     :type verbose: bool, optional
     """
     if step == "build":
+
+        test(ctx, verbose)
 
         cmds = [
             "cd docs/sphinx",
@@ -269,5 +356,10 @@ def docs(ctx, step="build", port=docker_host_sphinx_server_default_port, verbose
             "rm -rf searchindex.js",
             "rm -rf py-modindex.html",
         ]
+
+        if verbose:
+            res = ctx.run(" && ".join(cmds))
+        else:
+            res = ctx.run(" && ".join(cmds), hide="both")
 
         logger.info(pad("local clean ✔️"))
