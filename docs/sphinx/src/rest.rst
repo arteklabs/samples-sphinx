@@ -1,11 +1,5 @@
-.. raw:: html
-
-   <a href="https://github.com/lifespline/samples-sphinx.git"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork Me On Github" data-recalc-dims="1"></a>
-
-
-==========
-RST Syntax
-==========
+reST API Reference
+==================
 
 Below, you'll find a set of samples of the ``reST`` syntax with snippets.
 
@@ -13,7 +7,7 @@ Below, you'll find a set of samples of the ``reST`` syntax with snippets.
 Core Concepts
 -------------
 
-You'll find literature on these concepts at :doc:`literature`
+You'll find literature on these concepts at :doc:`references`
 
 Launching Sphinx server locally
 -------------------------------
@@ -334,18 +328,18 @@ Start by specifying on the :download:`sphinx config <../conf.py>` where the pyth
 
     import os
     import sys
-    sys.path.insert(0, os.path.abspath('../../src/demo')) # module docs
+    sys.path.insert(0, os.path.abspath('../../src')) # module docs
 
 Here's the extracted docs:
 
-.. automodule:: mod
+.. automodule:: sphinx
    :members:
 
 .. code-block:: text
 
     Here's the extracted docs:
 
-    .. automodule:: mod
+    .. automodule:: sphinx
        :members:
 
 To extract docs from a specific file (say :download:`tasks.py <../../../tasks.py>`), add to the :download:`sphinx config <../conf.py>`:
@@ -356,26 +350,26 @@ To extract docs from a specific file (say :download:`tasks.py <../../../tasks.py
     import sys
     sys.path.insert(0, os.path.abspath('../..')) # task runner docs
 
-To extract the docs, since they're being extracted elsewhere, it is required to add ``:noindex:``. Here's the extracted docs:
+.. To extract the docs, **since they're being extracted elsewhere**, it is required to add ``:noindex:``. Here's the extracted docs:
 
-.. automodule:: tasks
-   :noindex:
-   :members:
+.. .. automodule:: tasks
+..    :noindex:
+..    :members:
 
-.. code-block:: text
+.. .. code-block:: text
 
-    Here's the extracted docs:
+..     Here's the extracted docs:
 
-    .. automodule:: tasks
-       :noindex:
-       :members:
+..     .. automodule:: tasks
+..        :noindex:
+..        :members:
 
 .. _cross_references_docs:
 
 Cross-Reference: Documents
 --------------------------
 
-Pointer to the ``rst`` document :doc:`literature.rst <literature>`
+Pointer to the ``rst`` document :doc:`literature.rst <references>`
 
 .. code::
 

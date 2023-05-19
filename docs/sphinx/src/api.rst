@@ -1,0 +1,2 @@
+.. automodule:: main
+   :no-members:
