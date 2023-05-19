@@ -76,6 +76,8 @@ def lint(ctx, verbose=False):
         "black docs",
         "black tests",
         "black tasks.py",
+        "git add docs tests tasks.py src",
+        "git commit -m 'auto: lint'",
     ]
     if verbose:
         res = ctx.run(" && ".join(cmds))
