@@ -67,6 +67,10 @@ Read the docs `here <https://arteklabs.github.io/samples-sphinx/>`_.
 
   see docs/sphinx/index.rst
 
+:import docstrings from decorated methods:
+
+   TODO
+
 :import docstrings:
 
    docs/sphinx/src/api.rst imports src/main.py

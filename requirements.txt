@@ -1,7 +1,0 @@
-sphinx
-
-# sphinx theme
-furo
-
-# task runner
-invoke
