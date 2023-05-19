@@ -63,27 +63,36 @@ def read(*parts, here):
 
 
 @task
-def lint(ctx, verbose=False):
+def lint(ctx, verbose=False, commit=False):
     """Lint the |project|'s source code.
 
     Parameters
     ----------
     verbose : bool, optional
         _description_, by default False
+    commit : bool, optional
+        If ``True``, the linting changes are commited, by default ``False``
     """
     cmds = [
         "black src",
         "black docs",
         "black tests",
         "black tasks.py",
-        "git add docs tests tasks.py src",
-        "git commit -m 'auto: lint'",
     ]
     if verbose:
         res = ctx.run(" && ".join(cmds))
     else:
         res = ctx.run(" && ".join(cmds), hide="both")
 
+    if commit:
+        cmds = [
+            "git add docs tests tasks.py src",
+            "git commit -m 'auto: lint'",
+        ]
+        if verbose:
+            res = ctx.run(" && ".join(cmds))
+        else:
+            res = ctx.run(" && ".join(cmds), hide="both")
 
 @task
 def docs(ctx, step="build", port=docker_host_sphinx_server_default_port, verbose=False):
